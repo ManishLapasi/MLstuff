@@ -1,6 +1,6 @@
 import numpy as np, pandas as pd
 
-dataset = pd.read_csv("/Users/manish/pers/ML/resources/Part 2 - Regression/Section 6 - Polynomial Regression/Python/Position_Salaries.csv")
+dataset = pd.read_csv("../../resources/Part 2 - Regression/Section 6 - Polynomial Regression/Python/Position_Salaries.csv")
 x = dataset.iloc[:,1].values
 y = dataset.iloc[:,2].values
 

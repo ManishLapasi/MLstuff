@@ -1,6 +1,6 @@
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
 
-dataset = pd.read_csv("/Users/manish/pers/ML/resources/Part 2 - Regression/Section 5 - Multiple Linear Regression/Python/50_Startups.csv")
+dataset = pd.read_csv("../../resources/Part 2 - Regression/Section 5 - Multiple Linear Regression/Python/50_Startups.csv")
 
 x = dataset.iloc[:,:-1].values
 y = dataset.iloc[:,-1].values
