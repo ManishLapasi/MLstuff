@@ -88,4 +88,4 @@ print(y_list)
 
 from sklearn.metrics import r2_score
 for y_pred in (y_linReg, y_decTreeReg, y_polyReg, y_svReg, y_rfReg):
-    print(r2_score(Y_test,y_pred))
+    print(y_pred,r2_score(Y_test,y_pred))
