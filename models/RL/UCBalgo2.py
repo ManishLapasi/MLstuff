@@ -9,7 +9,7 @@ def del_i(n,N):
     return math.sqrt((3*math.log(n))/(2*N))
 
 N_ads = 10
-max_rounds_allowed = 10000
+max_rounds_allowed = 1000
 ads_selected = []
 number_of_selections = [0] * N_ads
 sums_of_rewards = [0] * N_ads
@@ -38,6 +38,6 @@ import matplotlib.pyplot as plt
 plt.hist(ads_selected)
 plt.show()
 
-shown_so_far = [ads_selected.count(i) for i in range(0,10)]
+shown_so_far = [ads_selected.count(i) for i in range(0,N_ads)]
 print(shown_so_far)
 print(total_reward)
