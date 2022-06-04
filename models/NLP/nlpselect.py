@@ -82,6 +82,9 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2,random_sta
 
 cmlist = []
 accuracylist = []
+precisionlist = []
+recalllist = []
+f1scorelist = []
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 for classifyingFunction in [bayesClassifier, logisticRegression, dt, svm, nonlinearsvm, knn]:
@@ -90,11 +93,17 @@ for classifyingFunction in [bayesClassifier, logisticRegression, dt, svm, nonlin
     #y_list = np.concatenate((y_pred.reshape(len(y_pred),1),y_test.reshape(len(y_test),1)),axis=1)
     #print(y_list)
     cm = confusion_matrix(y_test, y_pred)
-    print(cm)
-    print(accuracy_score(y_test, y_pred))
     cmlist.append(cm)
-    accuracylist.append(accuracy_score(y_test, y_pred))
+    accuracy = accuracy_score(y_test, y_pred)
+    accuracylist.append(accuracy)
+    precision = cm[0][0] / (cm[0][0] + cm[1][0])
+    precisionlist.append(precision)
+    recall = cm[0][0] / (cm[0][0] + cm[0][1])
+    recalllist.append(recall)
+    f1score = 2*precision*recall / (precision + recall)
+    f1scorelist.append(f1score)
+
 
 for i in range(0,len(cmlist)):
     print(cmlist[i])
-    print(accuracylist[i])
+    print(accuracylist[i],precisionlist[i],recalllist[i],f1scorelist[i])
