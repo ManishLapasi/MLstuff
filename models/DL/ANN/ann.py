@@ -71,3 +71,13 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
 print(accuracy_score(y_test, y_pred))
+
+## try predicting for custom value
+
+## 5,15737888,Mitchell,850,Spain,Female,43,2,125510.82,1,1,1,79084.1,0
+# Spain, so first 3 variables are 0,0,1
+# Female, so 5th variable is 0
+
+x_sample = [0.0, 0.0, 1.0, 850, 0, 43,2,125510.82,1,1,1,79084.1]
+
+print(ann.predict(ss.transform([x_sample])))
